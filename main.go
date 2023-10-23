@@ -27,14 +27,17 @@ func doAuthorize(w http.ResponseWriter, req *http.Request) {
 
 	fmt.Printf("auth: %q\n", auth)
 	if auth == "" {
+		fmt.Println("Unauthorized: no auth cookie")
 		http.Error(w, "Unauthorized", http.StatusUnauthorized)
 		return
 	}
 
 	if auth != token {
+		fmt.Println("Unauthorized: wrong auth cookie")
 		http.Error(w, "Unauthorized", http.StatusUnauthorized)
 		return
 	}
+	fmt.Println("Authorized")
 }
 
 func setToken(w http.ResponseWriter, req *http.Request) {
