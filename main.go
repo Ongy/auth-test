@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	cookieName = "auth"
+	cookieName = "special-auth-cookie"
 	token      = "TOKENVALUE"
 )
 
