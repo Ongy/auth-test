@@ -52,7 +52,7 @@ func setToken(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	http.SetCookie(w, &http.Cookie{Name: cookieName, Value: token})
+	http.SetCookie(w, &http.Cookie{Name: cookieName, Value: token, Path: "/"})
 	http.Redirect(w, req, redirect, http.StatusFound)
 }
 
