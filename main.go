@@ -60,7 +60,7 @@ func setToken(w http.ResponseWriter, req *http.Request) {
 }
 
 func doRun(ctx context.Context) error {
-	http.DefaultServeMux.HandleFunc("/authorize", doAuthorize)
+	http.DefaultServeMux.HandleFunc("/authorize/", doAuthorize)
 	http.DefaultServeMux.HandleFunc("/settoken", setToken)
 
 	server := http.Server{
